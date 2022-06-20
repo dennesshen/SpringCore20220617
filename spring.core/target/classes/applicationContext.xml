@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<bean id="Hello" class="com.spring.core.session01.beans.Hello" />
+	
+	<bean id="lotto1" scope="prototype" class="com.spring.core.session02.beans.Lotto" ></bean>
+	<bean id="lotto2" scope="singleton" class="com.spring.core.session02.beans.Lotto" ></bean>
+	
+	
+	<bean id="author1" class="com.spring.core.session02.beans.Author" />
+	<bean id="author2" class="com.spring.core.session02.beans.Author" >
+		<!-- 方法注入 -->
+		<property name="name">
+			<value>Vincent</value>
+		</property>
+		<property name="sex">
+			<value>M</value>
+		</property>
+		<property name="age">
+			<value>30</value>
+		</property>
+	</bean>
+	
+	<bean id="author3" class="com.spring.core.session02.beans.Author" >
+		<!-- 建構子注入 -->
+		<constructor-arg index="0" value="Mary"></constructor-arg>
+		<constructor-arg index="1" value="F"></constructor-arg>
+		<constructor-arg index="2" value="25"></constructor-arg>
+	
+	</bean>
+	
+	<!-- P 方法注入  -->
+	<bean id="author4" class="com.spring.core.session02.beans.Author"
+		  p:name="Hellen" p:age="21" p:sex="F" />
+		  
+	<!-- C 建構子注入 -->
+	<bean id="author5" class="com.spring.core.session02.beans.Author"
+		  c:name="Tom" c:age="21" c:sex="M" />
+	
+	
+	
+</beans>
