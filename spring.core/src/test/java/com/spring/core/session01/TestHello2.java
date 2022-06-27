@@ -27,5 +27,6 @@ public class TestHello2 {
 		Hello hello3 = applicationContext2.getBean(Hello.class);
 		Hello hello4 = applicationContext2.getBean("hello",Hello.class);
 		System.out.println(hello3);
+		System.out.println(hello4);
 	}
 }

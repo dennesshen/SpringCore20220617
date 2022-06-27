@@ -230,6 +230,8 @@
 	<!-- 利用 BeanFactory 建立實體 -->
 	<bean id="carFactory" scope="prototype" class="com.spring.core.session03.beans.CarFactory"></bean>
 
+	<!--  掃描配置 -->
+	<context:component-scan base-package="com.spring.core.session03.mvc" />
 </beans>
 	
 	
