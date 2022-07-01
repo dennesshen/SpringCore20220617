@@ -1,4 +1,4 @@
-package com.spring.core.session04;
+package com.spring.core.session04.sta;
 
 public class Man implements Person {
 	public void work() {
